@@ -1,0 +1,30 @@
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #eee;
+  background-color: #f8f8f8;
+  color: #999;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eee;
+    border-color: #ddd;
+  }
+}
+
+.blank {
+  pointer-events: none;
+  cursor: default;
+
+  &,
+  &:hover {
+    border: 0;
+    background-color: transparent;
+  }
+}

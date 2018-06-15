@@ -1,0 +1,14 @@
+.base {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 400px;
+  margin: 10vh auto;
+  min-width: 400px;
+  max-width: 700px;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+}
