@@ -16,7 +16,7 @@ class App extends Component {
   state = initialState()
 
   swapItems = (arr, rowA, indexA, rowB, indexB) => {
-    const matrix = arr.concat([]) // so not to mutate the array refernce
+    const matrix = arr.concat([]) // so not to mutate the array reference
     const temp = matrix[rowA][indexA]
     matrix[rowA][indexA] = matrix[rowB][indexB]
     matrix[rowB][indexB] = temp
@@ -37,19 +37,20 @@ class App extends Component {
   }
 
   checkCanMove = (targetCoords, blankCoords) => {
-    // by row
-    if (targetCoords.x === blankCoords.x) {
-      if (targetCoords.y === blankCoords.y - 1 || targetCoords.y === blankCoords.y + 1) {
-        return true
-      }
-    // by column
-    } else if (targetCoords.y === blankCoords.y) {
-      if (targetCoords.x === blankCoords.x - 1 || targetCoords.x === blankCoords.x + 1) {
-        return true
-      }
-    } else {
-      return false
+    // check by row, and then by column
+    if (
+      (targetCoords.x === blankCoords.x)
+      && (targetCoords.y === blankCoords.y - 1 || targetCoords.y === blankCoords.y + 1)
+    ) {
+      return true
+    } else if (
+      (targetCoords.y === blankCoords.y)
+      && (targetCoords.x === blankCoords.x - 1 || targetCoords.x === blankCoords.x + 1)
+    ) {
+      return true
     }
+    // return false if no match
+    return false
   }
 
   handleTileClick = (tileNumber) => {
